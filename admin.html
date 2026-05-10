@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<header class="header">
+  <h1>🛡 Admin Panel</h1>
+</header>
+
+<div class="admin-login">
+  <input type="password" id="pin" placeholder="Enter Admin PIN" />
+  <button onclick="login()">Unlock</button>
+</div>
+
+<div id="adminContent" style="display:none;">
+  <h2 class="section-title">Pending Apps</h2>
+  <div id="pendingApps"></div>
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
