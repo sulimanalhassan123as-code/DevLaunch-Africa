@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevLaunch Africa</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<header class="header">
+  <h1>🚀 DevLaunch Africa</h1>
+  <p>Discover African startups and builders</p>
+</header>
+
+<section class="submit-box">
+  <h2>Submit Your App</h2>
+
+  <input id="name" placeholder="App Name" />
+  <input id="url" placeholder="https://yourapp.com" />
+  <input id="builder" placeholder="Builder Name" />
+  <input id="whatsapp" placeholder="233244000000" />
+
+  <select id="category">
+    <option>FinTech</option>
+    <option>HealthTech</option>
+    <option>EdTech</option>
+    <option>AgriTech</option>
+    <option>Social</option>
+    <option>Other</option>
+  </select>
+
+  <textarea id="description" placeholder="Describe your app..."></textarea>
+
+  <button onclick="submitApp()">🚀 Submit App</button>
+</section>
+
+<section>
+  <h2 class="section-title">🏆 Leaderboard</h2>
+
+  <div id="apps"></div>
+</section>
+
+<footer>
+  Powered by Suleiman Alhassan
+</footer>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
