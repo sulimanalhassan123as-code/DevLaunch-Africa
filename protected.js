@@ -4,6 +4,8 @@ const {
   data: { session }
 } = await supabase.auth.getSession();
 
-if(!session) {
-  location.href = 'login.html';
+const currentPage = window.location.pathname;
+
+if (!session && !currentPage.includes('login.html')) {
+  window.location.href = '/login.html';
 }
