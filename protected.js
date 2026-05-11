@@ -1,15 +1,13 @@
+// protected.js
 import { supabase } from './supabase.js';
 
-async function protectPage() {
-
-  const {
-    data: { session }
-  } = await supabase.auth.getSession();
-
-  if (!session) {
-    window.location.replace('/login.html');
-  }
-
+async function checkAuth() {
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    // If no user is logged in, send them to the login page
+    if (!session) {
+        window.location.href = 'login.html';
+    }
 }
 
-protectPage();
+checkAuth();
