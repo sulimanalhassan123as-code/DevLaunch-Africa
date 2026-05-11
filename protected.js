@@ -1,11 +1,15 @@
 import { supabase } from './supabase.js';
 
-const {
-  data: { session }
-} = await supabase.auth.getSession();
+async function protectPage() {
 
-const currentPage = window.location.pathname;
+  const {
+    data: { session }
+  } = await supabase.auth.getSession();
 
-if (!session && !currentPage.includes('login.html')) {
-  window.location.href = '/login.html';
+  if (!session) {
+    window.location.replace('/login.html');
+  }
+
 }
+
+protectPage();
